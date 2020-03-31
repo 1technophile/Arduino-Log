@@ -120,6 +120,13 @@ public:
 	 */
 	int getLevel() const;
 
+		/**
+	 * Get the last msg log level.
+	 *
+	 * \return The current msg log level.
+	 */
+	int getLastMsgLevel() const;
+
 	/**
 	 * Set whether to show the log level.
 	 * 
@@ -264,6 +271,7 @@ private:
 	template <class T> void printLevel(int level, T msg, ...)
 	{
 #ifndef DISABLE_LOGGING
+      	_msgLevel = level;
 		if (level > _level)
 		{
 			return;
@@ -293,6 +301,7 @@ private:
 
 #ifndef DISABLE_LOGGING
 	int _level;
+	int _msgLevel;
 	bool _showLevel;
 	Print* _logOutput;
 

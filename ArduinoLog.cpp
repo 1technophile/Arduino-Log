@@ -40,6 +40,15 @@ void Logging::begin(int level, Print* logOutput, bool showLevel)
 #endif
 }
 
+int Logging::getLastMsgLevel() const
+{
+#ifndef DISABLE_LOGGING
+	return _msgLevel;
+#else
+	return 0;
+#endif
+}
+
 void Logging::setLevel(int level)
 {
 #ifndef DISABLE_LOGGING
