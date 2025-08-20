@@ -21,6 +21,7 @@ Licensed under the MIT License <http://opensource.org/licenses/MIT>.
 #else
 	#include "WProgram.h"
 #endif
+#include <Print.h>
 typedef void (*printfunction)(Print*);
 
 //#include <stdint.h>
